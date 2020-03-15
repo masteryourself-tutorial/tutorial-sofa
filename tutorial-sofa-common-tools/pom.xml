@@ -21,7 +21,7 @@
         <dependencies>
             <dependency>
                 <groupId>pers.masteryourself.tutorial.sofa</groupId>
-                <artifactId>actua-sample-apm</artifactId>
+                <artifactId>actual-sample-apm</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>
