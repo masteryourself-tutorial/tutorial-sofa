@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="OFF">
+
+    <Properties>
+        <!-- 将系统属性进行一次本地转换 -->
+        <Property name="APM_LOG_LEVEL">info</Property>
+        <Property name="APM_LOG_PATH">${sys:logging.path}</Property>
+        <Property name="APM_FILE_ENCODING">${sys:file.encoding}</Property>
+    </Properties>
+
+    <appenders>
+
+        <RollingFile name="ERROR-APPENDER" fileName="${APM_LOG_PATH}/apm/middleware-apm-error.log" append="true"
+                     filePattern="${APM_LOG_PATH}/apm/middleware-apm-error.log.%d{yyyy-MM-dd}">
+            <!-- only print error log -->
+            <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout charset="${APM_FILE_ENCODING}">
+                <pattern>%d %-5p %-32t - %m%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <!-- 按天分日志文件:重要的是 filePattern 配置到按照天 -->
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+
+        <RollingFile name="ROOT-APPENDER" fileName="${APM_LOG_PATH}/apm/middleware-apm-default.log" append="true"
+                     filePattern="${APM_LOG_PATH}/apm/middleware-apm-default.log.%d{yyyy-MM-dd}">
+            <ThresholdFilter level="${APM_LOG_LEVEL}" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout charset="${APM_FILE_ENCODING}">
+                <pattern>%d %-5p %-32t - %m%n</pattern>
+            </PatternLayout>
+            <Policies>
+                <!-- 按天分日志文件:重要的是 filePattern 配置到按照天 -->
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+        </RollingFile>
+
+    </appenders>
+
+    <loggers>
+
+        <root level="${APM_LOG_LEVEL}">
+            <appender-ref ref="ROOT-APPENDER"/>
+            <appender-ref ref="ERROR-APPENDER"/>
+        </root>
+
+    </loggers>
+</configuration>

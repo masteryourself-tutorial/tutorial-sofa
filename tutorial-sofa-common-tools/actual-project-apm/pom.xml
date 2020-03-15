@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>tutorial-sofa-common-tools</artifactId>
+        <groupId>pers.masteryourself.tutorial.sofa</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>actua-project-apm</artifactId>
+
+    <dependencies>
+        <!-- 引入 log-sofa-boot-starter, 它包含了 sofa-common-tools -->
+        <dependency>
+            <groupId>com.alipay.sofa.common</groupId>
+            <artifactId>log-sofa-boot-starter</artifactId>
+            <version>1.0.19</version>
+        </dependency>
+
+        <!-- lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.4</version>
+        </dependency>
+    </dependencies>
+
+</project>

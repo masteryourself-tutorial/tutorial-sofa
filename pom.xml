@@ -11,6 +11,7 @@
 
     <modules>
         <module>tutorial-sofa-ark</module>
+        <module>tutorial-sofa-common-tools</module>
     </modules>
 
 </project>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Properties>
+        <Property name="APP_ID" value="user-center"/>
+        <Property name="LOG_PATH" value="/data/logs/${APP_ID}"/>
+        <Property name="LOG_PATTERN"
+                  value="%d{yyyy-MM-dd HH:mm:ss.SSS} %p %c [%t]: ${APP_ID} [%X{traceId}] %msg %ex{separator(|)}%n"/>
+    </Properties>
+
+    <Appenders>
+
+        <console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[%d{HH:mm:ss:SSS}] [来自于业务方 user 用户中心打印的日志] [%X{traceId}]- %l - %m%n"/>
+        </console>
+
+        <RollingFile name="RollingFile"
+                     fileName="${LOG_PATH}/app.log"
+                     filePattern="${LOG_PATH}/app-%d{yyyyMMdd}-%i.log.gz">
+            <PatternLayout>
+                <Pattern>${LOG_PATTERN}</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1"
+                                           modulate="true"/>
+                <SizeBasedTriggeringPolicy size="1GB"/>
+            </Policies>
+            <DefaultRolloverStrategy>
+                <Delete basePath="${LOG_PATH}" maxDepth="1">
+                    <IfFileName glob="app-*.log.gz"/>
+                    <IfAccumulatedFileCount exceeds="14"/>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+
+    </Appenders>
+
+    <Loggers>
+
+        <root level="info">
+            <AppenderRef ref="RollingFile"/>
+            <appender-ref ref="Console"/>
+        </root>
+
+    </Loggers>
+
+</Configuration>
