@@ -13,15 +13,15 @@
     <packaging>pom</packaging>
     
     <modules>
-        <module>actual-project-apm</module>
-        <module>actual-project-user</module>
+        <module>actual-sample-apm</module>
+        <module>actual-sample-user</module>
     </modules>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>pers.masteryourself.tutorial.sofa</groupId>
-                <artifactId>actua-project-apm</artifactId>
+                <artifactId>actua-sample-apm</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>

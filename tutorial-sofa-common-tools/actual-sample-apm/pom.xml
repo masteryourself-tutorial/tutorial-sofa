@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>actua-project-apm</artifactId>
+    <artifactId>actua-sample-apm</artifactId>
 
     <dependencies>
         <!-- 引入 log-sofa-boot-starter, 它包含了 sofa-common-tools -->
