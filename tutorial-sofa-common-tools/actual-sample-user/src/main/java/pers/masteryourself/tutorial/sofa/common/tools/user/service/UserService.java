@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * <p>description : UserService
  *
- * <p>blog : https://Blog.csdn.net/masteryourself
+ * <p>blog : https://blog.csdn.net/masteryourself
  *
  * @author : masteryourself
  * @version : 1.0.0

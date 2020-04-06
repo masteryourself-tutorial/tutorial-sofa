@@ -12,7 +12,7 @@ import pers.masteryourself.tutorial.sofa.common.tools.user.service.UserService;
 /**
  * <p>description : UserCenterApplicationTest
  *
- * <p>blog : https://Blog.csdn.net/masteryourself
+ * <p>blog : https://blog.csdn.net/masteryourself
  *
  * @author : masteryourself
  * @version : 1.0.0
